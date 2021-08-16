@@ -30,7 +30,7 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 
 ### Getting Started
 
-* See the video
+* [See the video](https://www.youtube.com/ismaelnascimentoash)
 
 <!-- CONTRIBUTING -->
 ## Contributing
