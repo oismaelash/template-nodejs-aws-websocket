@@ -1,0 +1,72 @@
+frameworkVersion: "2"
+
+org: ismaelash
+app: ${self:custom.projectName}
+service: websocket-notifications
+
+provider:
+    name: aws
+    # runtime: nodejs14.x
+    runtime: nodejs12.x
+    # region: us-east-1
+    region: us-east-2
+    # stage: prod
+    stage: develop
+    websocketsApiName: ${self:custom.projectName}
+    websocketsApiRouteSelectionExpression: $request.body.action
+    logs:
+        websocket:
+            level: INFO
+    iamRoleStatements:
+        - Effect: Allow
+          Action:
+              - dynamodb:*
+              - cloudwatch:*
+          Resource: "*"
+
+package:
+    individually: true
+
+custom:
+    projectName: template-nodejs-websocket
+
+functions:
+    connectionHandler:
+        handler: lambdas/websockets/websocketHandler.handler
+        events:
+            - websocket:
+                  route: $connect
+    disconnectHandler-:
+        handler: lambdas/websockets/websocketHandler.handler
+        events:
+            - websocket:
+                  route: $disconnect
+    defaultHandler:
+        handler: lambdas/websockets/websocketHandler.handler
+        events:
+            - websocket:
+                  route: $default
+    publishMessageHandler:
+        handler: lambdas/websockets/websocketHandler.handler
+        events:
+            - websocket:
+                  route: publish
+    setTopicHandler:
+        handler: lambdas/websockets/websocketHandler.handler
+        events:
+            - websocket:
+                  route: setTopic
+
+resources:
+    Resources:
+        NotificationsWebsocketTable:
+            Type: AWS::DynamoDB::Table
+            Properties:
+                TableName: ${self:custom.projectName}
+                AttributeDefinitions:
+                    - AttributeName: Id
+                      AttributeType: S
+                KeySchema:
+                    - AttributeName: Id
+                      KeyType: HASH
+                BillingMode: PAY_PER_REQUEST
