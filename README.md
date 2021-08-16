@@ -30,16 +30,7 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 
 ### Getting Started
 
-* Enter credentials from your database
-File(Line 16): https://github.com/MicaelaGuimaraes/TemplateApiNetCoreDDD/blob/main/DataAccess/Context.cs
-
-* Install dotnet-ef: <br/>
-`dotnet tool install --global dotnet-ef`
-
-* Run the Migrations command to create your database: <br/>
-`dotnet ef database update`
-
-* Click the run
+* See the video
 
 <!-- CONTRIBUTING -->
 ## Contributing
