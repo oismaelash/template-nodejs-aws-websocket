@@ -4,6 +4,7 @@ const PublishMessage = require("../publishMessageHandler");
 const Default = require("../defaultHandler");
 const SetTopic = require("../setTopicHandler");
 const Constants = require("../../utils/constants");
+const Response = require("../../utils/response");
 
 exports.handler = async (event) => {
   // console.log("event", event);
@@ -15,9 +16,11 @@ exports.handler = async (event) => {
 
   switch (route) {
     case "$connect":
-      return await Connect.handler(connectionId, Constants.TABLE_NAME, domainName, stage);
+      await Connect.handler(connectionId, Constants.TABLE_NAME, domainName, stage);
+      return Response.send(200, 'connected websocket system');
     case "$disconnect":
-      return await Disconnect.handler(connectionId, Constants.TABLE_NAME);
+      await Disconnect.handler(connectionId, Constants.TABLE_NAME);
+      return Response.send(200, 'disconnected websocket system');
     case "publish":
       return await PublishMessage.handler(event.body, Constants.TABLE_NAME, domainName, stage);
     case "setTopic":
@@ -25,4 +28,7 @@ exports.handler = async (event) => {
     default:
       return await Default.handler(connectionId, domainName, stage);
   }
+
 };
+
+// wss://4tak5p460k.execute-api.us-east-2.amazonaws.com/develop
