@@ -1,9 +1,9 @@
 {
    "requestContext":{
-      "routeKey":"$connect",
-      "stage":"develop",
+      "routeKey":"$connect/$disconnect/...",
+      "stage":"production/develop/...",
       "domainName":"4tak5p460k.execute-api.us-east-2.amazonaws.com",
-      "connectionId":"XYZ"
+      "connectionId":"XYZID"
    },
-   "body": "{ \"topic\": \"test\" }"
+   "body": "{ \"key\": \"value\" }"
 }

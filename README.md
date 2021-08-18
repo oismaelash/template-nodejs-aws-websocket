@@ -30,7 +30,7 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 
 ### Getting Started
 
-* [See the video](https://www.youtube.com/ismaelnascimentoash)
+* [See the video for all instructions](https://www.youtube.com/ismaelnascimentoash)
 
 * Create Access/Secret Keys on AWS
 * * IAM service
@@ -52,7 +52,7 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 
 * Configure project with Serverless Framework
 * * `$ serverless`
-* * Choose create projet
+* * Choose create project
 * * Choose deploy project
 
 * Verify project created
