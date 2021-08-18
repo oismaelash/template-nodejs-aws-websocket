@@ -54,6 +54,10 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 * * https://www.serverless.com/framework/docs/getting-started/ <br>
 * * `$ npm install -g serverless`
 
+* Changes informations on serverless.yml
+* * https://github.com/ismaelash/template-nodejs-aws-websocket/blob/main/serverless.yml <br>
+* * * org, app, service are important
+
 * Connect project with dashboard of Serverless Framework
 * * `$ serverless login`
 
