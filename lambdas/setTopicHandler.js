@@ -3,8 +3,8 @@ const DynamoDB = require("../utils/dynamoDB");
 
 exports.handler = async (connectionId, body, tableName) => {
   var payload = JSON.parse(body);
-  var topicName = payload.body.topic;
-
+  var topicName = payload.topic;
+  console.log(payload)
   try {
     var item = await DynamoDB.readOne(connectionId, tableName);
     item.topic = topicName;

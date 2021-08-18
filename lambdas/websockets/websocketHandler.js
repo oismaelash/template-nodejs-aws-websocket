@@ -1,12 +1,12 @@
 const Connect = require("../connectHandler");
 const Disconnect = require("../disconnectHandler");
-const PublishMessage = require("../PublishMessageHandler");
+const PublishMessage = require("../publishMessageHandler");
 const Default = require("../defaultHandler");
 const SetTopic = require("../setTopicHandler");
 const Constants = require("../../utils/constants");
 
 exports.handler = async (event) => {
-  console.log("event", event);
+  // console.log("event", event);
 
   const route = event.requestContext.routeKey;
   const connectionId = event.requestContext.connectionId;
@@ -15,21 +15,14 @@ exports.handler = async (event) => {
 
   switch (route) {
     case "$connect":
-      Connect.handler(connectionId, Constants.TABLE_NAME, domainName, stage);
-      break;
+      return await Connect.handler(connectionId, Constants.TABLE_NAME, domainName, stage);
     case "$disconnect":
-      Disconnect.handler(connectionId, Constants.TABLE_NAME);
-      break;
+      return await Disconnect.handler(connectionId, Constants.TABLE_NAME);
     case "publish":
-      PublishMessage.handler(event.body, Constants.TABLE_NAME, domainName, stage);
-      break;
+      return await PublishMessage.handler(event.body, Constants.TABLE_NAME, domainName, stage);
     case "setTopic":
-      SetTopic.handler(connectionId, event.body, Constants.TABLE_NAME);
-      break;
+      return await SetTopic.handler(connectionId, event.body, Constants.TABLE_NAME);
     default:
-      Default.handler(connectionId, domainName, stage);
-      break;
+      return await Default.handler(connectionId, domainName, stage);
   }
-
-  // return Response.send(200, null)
 };

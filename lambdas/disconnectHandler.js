@@ -3,7 +3,7 @@ const DynamoDB = require("../utils/dynamoDB");
 
 exports.handler = async (connectionId, tableName) => {
   try {
-    var response = await DynamoDB.delete(connectionId, tableName);
+    let response = await DynamoDB.delete(connectionId, tableName);
     return Response.send(200, response);
   } catch (error) {
     console.log("disconnectHandler.error", error);

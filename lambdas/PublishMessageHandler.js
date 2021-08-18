@@ -4,18 +4,19 @@ const Message = require("../utils/messages");
 
 exports.handler = async (body, tableName, domainName, stage) => {
   try {
-    var payload = JSON.parse(body);
-    var clientsOnTopic = await DynamoDB.getAllClientsOnTopic(
-      payload.body.topic,
+    let payload = JSON.parse(body);
+    console.log(`payload`, payload)
+    let clientsOnTopicResponse = await DynamoDB.getAllClientsOnTopic(
+      payload.topic,
       tableName
     );
-
-    for (const client of clientsOnTopic) {
+    console.log(`clientsOnTopicResponse`, clientsOnTopicResponse)
+    for (const client of clientsOnTopicResponse) {
       await Message.send(
         domainName,
         stage,
         client.Id,
-        Response.send(200, payload.body)
+        payload.body
       );
     }
 

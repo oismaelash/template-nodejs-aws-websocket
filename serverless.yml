@@ -1,8 +1,8 @@
 frameworkVersion: "2"
 
-org: ismaelash
-app: ${self:custom.projectName}
-service: websocket-notifications
+org: ismaelnascimentoash
+app: template-nodejs-websocket
+service: websocket-quiui
 
 provider:
     name: aws
