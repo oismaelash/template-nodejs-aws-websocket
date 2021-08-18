@@ -13,7 +13,7 @@ provider:
     # stage: prod
     stage: develop
     websocketsApiName: ${self:custom.projectName}
-    websocketsApiRouteSelectionExpression: $request.body.action
+    websocketsApiRouteSelectionExpression: $request.body.route
     logs:
         websocket:
             level: INFO

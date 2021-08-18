@@ -24,7 +24,8 @@ exports.handler = async (event) => {
     case "publish":
       return await PublishMessage.handler(event.body, Constants.TABLE_NAME, domainName, stage);
     case "setTopic":
-      return await SetTopic.handler(connectionId, event.body, Constants.TABLE_NAME);
+      let setTopicResponse = await SetTopic.handler(connectionId, event.body, Constants.TABLE_NAME);
+      return setTopicResponse;
     default:
       return await Default.handler(connectionId, domainName, stage);
   }

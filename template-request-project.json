@@ -1,4 +1,4 @@
 {
-   "action": "",
-   "body": {}
+   "route": "routeName",
+   "body": { "topic": "test" }
 }
