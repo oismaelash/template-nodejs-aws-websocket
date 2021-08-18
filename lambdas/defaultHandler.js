@@ -1,15 +1,16 @@
 const Response = require("../utils/response");
-const Message = require("../utils/messages");
+const Message = require("../utils/message");
 
 exports.handler = async (connectionId, domainName, stage) => {
   try {
-    var response = await Message.send(
+    let payload = Response.send(404, "route not found")
+    await Message.send(
       domainName,
       stage,
       connectionId,
-      Response.send(200, response)
+      payload
     );
-    return Response.send(200, "Connected on system of websocket");
+    return payload
   } catch (error) {
     console.log("defaultHandler.error", error);
     return Response.send(500, error);

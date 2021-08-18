@@ -1,18 +1,24 @@
 const Response = require("../utils/response");
 const DynamoDB = require("../utils/dynamoDB");
+const Message = require("../utils/message");
 
-exports.handler = async (connectionId, body, tableName) => {
-  var payload = JSON.parse(body);
-  var topicName = payload.body.topic;
+exports.handler = async (connectionId, body, tableName, domainName, stage) => {
+  let topicName = JSON.parse(body).topic;
+  let payload = Response.send(200,  `Client with ID: ${connectionId} subscribe on topic: ${topicName}`);
   console.log('payload', payload)
   console.log('topicName', topicName)
   try {
-    var item = await DynamoDB.readOne(connectionId, tableName);
-    console.log('item', item)
-    item.topic = topicName;
-    var response = await DynamoDB.createOrUpdate(item, tableName);
-    console.log('createOrUpdate res', response)
-    return Response.send(200, response);
+    let connectionItem = await DynamoDB.readOne(connectionId, tableName);
+    connectionItem.topic = topicName;
+    console.log('connectionItem', connectionItem)
+    await DynamoDB.createOrUpdate(connectionItem, tableName);
+    await Message.send(
+      domainName,
+      stage,
+      connectionId,
+      payload
+    );
+    return payload
   } catch (error) {
     console.log("setTopicHandler.error", error);
     return Response.send(500, error);

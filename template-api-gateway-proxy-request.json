@@ -3,7 +3,7 @@
       "routeKey":"$connect",
       "stage":"develop",
       "domainName":"4tak5p460k.execute-api.us-east-2.amazonaws.com",
-      "connectionId":"EPfHycYCiYcAd6w="
+      "connectionId":"XYZ"
    },
    "body": "{ \"topic\": \"test\" }"
 }

@@ -1,5 +1,6 @@
 const Response = require("../utils/response");
 const DynamoDB = require("../utils/dynamoDB");
+const Message = require("../utils/message");
 
 exports.handler = async (connectionId, tableName, domainName, stage) => {
   const data = {
@@ -10,10 +11,10 @@ exports.handler = async (connectionId, tableName, domainName, stage) => {
     topic: ""
   };
 
-  console.log('Connect.handler')
+  console.log('Connect.handler', tableName, data)
   try {
-    let response = await DynamoDB.createOrUpdate(data, tableName);
-    return Response.send(200, response);
+    await DynamoDB.createOrUpdate(data, tableName);
+    return Response.send(200, 'connected websocket system');
   } catch (error) {
     console.log("connectHandler.error", error);
     return Response.send(500, error);

@@ -32,6 +32,40 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 
 * [See the video](https://www.youtube.com/ismaelnascimentoash)
 
+* Create Access/Secret Keys on AWS
+* * IAM service
+* * * https://console.aws.amazon.com/iam/home#/home
+* * * https://console.aws.amazon.com/iamv2/home#/users
+* * * Create new user type programmatic access
+* * * * Permissions: AdministratorAccess
+
+* Create provider for AWS with Access/Secret Keys
+* * https://app.serverless.com/ismaelnascimentoash/settings/providers
+* * https://www.serverless.com/framework/docs/guides/providers/
+
+* Install Serverless Framework
+* * https://www.serverless.com/framework/docs/getting-started/ <br>
+* * `$ npm install -g serverless`
+
+* Connect project with dashboard of Serverless Framework
+* * `$ serverless login`
+
+* Configure project with Serverless Framework
+* * `$ serverless`
+* * Choose create projet
+* * Choose deploy project
+
+* Verify project created
+* * `$ serverless info`
+* * View Serverless Framework Dashboard
+* * View services created on AWS Services used
+
+* Make changes on code and redeploy
+* * `$ serverless deploy`
+
+* Remove all project
+* * `$ serverless remove`
+
 <!-- CONTRIBUTING -->
 ## Contributing
 

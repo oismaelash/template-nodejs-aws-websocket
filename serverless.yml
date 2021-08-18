@@ -32,27 +32,27 @@ custom:
 
 functions:
     connectionHandler:
-        handler: lambdas/websockets/websocketHandler.handler
+        handler: lambdas/websocketHandler.handler
         events:
             - websocket:
                   route: $connect
     disconnectHandler-:
-        handler: lambdas/websockets/websocketHandler.handler
+        handler: lambdas/websocketHandler.handler
         events:
             - websocket:
                   route: $disconnect
     defaultHandler:
-        handler: lambdas/websockets/websocketHandler.handler
+        handler: lambdas/websocketHandler.handler
         events:
             - websocket:
                   route: $default
     publishMessageHandler:
-        handler: lambdas/websockets/websocketHandler.handler
+        handler: lambdas/websocketHandler.handler
         events:
             - websocket:
                   route: publish
     setTopicHandler:
-        handler: lambdas/websockets/websocketHandler.handler
+        handler: lambdas/websocketHandler.handler
         events:
             - websocket:
                   route: setTopic

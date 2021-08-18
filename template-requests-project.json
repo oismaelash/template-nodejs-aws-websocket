@@ -1,0 +1,16 @@
+[
+   {
+      "route": "setTopic",
+      "topic": "test"
+   },
+   {
+      "route":"publish",
+      "topic":"topicA",
+      "body":{ }
+   },
+   {
+      "route":"publish",
+      "topic":"topicA",
+      "body": "string"
+   }
+]
