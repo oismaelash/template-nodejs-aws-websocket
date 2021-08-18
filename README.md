@@ -43,6 +43,13 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 * * https://app.serverless.com/ismaelnascimentoash/settings/providers
 * * https://www.serverless.com/framework/docs/guides/providers/
 
+- Create Access Key on Serverless Framework Dashboard
+* * https://app.serverless.com/ismaelnascimentoash/settings/accessKeys
+
+- Create Secret Key for Serverless Framework on Github Repository
+* * SERVERLESS_ACCESS_KEY
+* * https://github.com/ismaelash/template-nodejs-aws-websocket/settings/secrets/actions
+
 * Install Serverless Framework
 * * https://www.serverless.com/framework/docs/getting-started/ <br>
 * * `$ npm install -g serverless`
