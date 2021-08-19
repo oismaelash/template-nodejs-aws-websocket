@@ -1,8 +1,8 @@
 {
    "requestContext":{
       "routeKey":"$connect/$disconnect/...",
-      "stage":"production/develop/...",
-      "domainName":"4tak5p460k.execute-api.us-east-2.amazonaws.com",
+      "stage":"develop",
+      "domainName":"ID.execute-api.us-east-2.amazonaws.com",
       "connectionId":"XYZID"
    },
    "body": "{ \"key\": \"value\" }"

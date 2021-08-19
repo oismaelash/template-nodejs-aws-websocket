@@ -77,6 +77,8 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 * Testing the Websocket
 * * Yo can use the Chrome Extension below
 * * * [Websocket Test Client](https://chrome.google.com/webstore/detail/websocket-test-client/fgponpodhbmadfljofbimhhlengambbn?hl=en)
+* * Example of payloads for test this template application websocket
+* * * [JSONs](https://github.com/ismaelash/template-nodejs-aws-websocket/tree/main/assets)
 
 * Make changes on code and redeploy
 * * `$ serverless deploy`

@@ -1,0 +1,19 @@
+// example payload for set client on some topic
+{
+   "route": "setTopic",
+   "topic": "test"
+}
+
+// example payload for publish message of type json to some topic
+{
+   "route": "publish",
+   "topic": "topicA",
+   "body": { "myKey": "myValue" }
+}
+
+// example payload for publish message of type string to some topic
+{
+   "route": "publish",
+   "topic": "topicA",
+   "body": "stringValue"
+}
