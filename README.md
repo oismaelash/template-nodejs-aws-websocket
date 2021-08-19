@@ -89,11 +89,16 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 ## Troubleshooting
 
 * If on step "Configure project with Serverless Framework" show up error below <br>
-Error: The provided access key is not authorized for this operation. - Please contact support and provide this identifier to reference this issue - 6XTBZKM5S92D
-* *  Go to C:\Users\USERNAME\
+`Error: The provided access key is not authorized for this operation. - Please contact support and provide this identifier to reference this issue - 6XTBZKM5S92D`
+* * Go to C:\Users\USERNAME\
 * * * Delete file `.serverlessrc`
 * * * Run again: `$ serverless login`
 * * * Run again: `$ serverless`
+
+* If on step "Configure project with Serverless Framework" show up error below <br>
+`'/20210819/us-east-1/sts/aws4_request' not a valid key=value pair (missing equal-sign) in Authorization header: 'AWS4-HMAC-SHA256 Credential=AKIASXQVJM56373DDF /20210819/us-east-1/sts/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=cd6bde074a6941be7623f8156a6a6775613f3bd848f855d78b556bef116f03e7'.`
+* * Access Key or Secret Key is wrong on Serverless Framework Dashboard in Provider used
+* * * https://app.serverless.com/ismaelnascimentoash/settings/providers
 
 <!-- CONTRIBUTING -->
 ## Contributing
