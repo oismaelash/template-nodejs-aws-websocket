@@ -111,7 +111,7 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 * * * Click Next: Tags and Click Next: Review
 * * * Add name: serverlessAPIGatewayCloudWatchLogs and Click Create Role
 * * * remove the comment the line 20 of [serverless.yml](https://github.com/ismaelash/template-nodejs-aws-websocket/blob/main/serverless.yml)
-* * * replace `{AccountId}`for your [account Id](https://console.aws.amazon.com/billing/home?#/account)
+* * * replace `{AccountId}` for your [account Id](https://console.aws.amazon.com/billing/home?#/account)
 
 <!-- CONTRIBUTING -->
 ## Contributing
