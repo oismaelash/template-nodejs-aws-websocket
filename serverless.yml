@@ -17,6 +17,7 @@ provider:
     logs:
         websocket:
             level: INFO
+            # role: arn:aws:iam::{AccountId}:role/serverlessAPIGatewayCloudWatchLogs
     iamRoleStatements:
         - Effect: Allow
           Action:
