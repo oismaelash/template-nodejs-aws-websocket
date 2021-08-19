@@ -100,6 +100,11 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 * * Access Key or Secret Key is wrong on Serverless Framework Dashboard in Provider used
 * * * https://app.serverless.com/ismaelnascimentoash/settings/providers
 
+* If on step "Configure project with Serverless Framework" show up error below <br>
+`An error occurred: WebsocketsDeploymentStage - CloudWatch Logs role ARN must be set in account settings to enable logging (Service: AmazonApiGatewayV2; Status Code: 400; Error Code: BadRequestException; Request ID: cde1d14f-6dbc-46d3-8568-1433e7f712ff; Proxy: null).`
+* * See the article below
+* * * https://aws.amazon.com/pt/premiumsupport/knowledge-center/api-gateway-cloudwatch-logs/
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
