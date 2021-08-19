@@ -71,11 +71,27 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 * * View Serverless Framework Dashboard
 * * View services created on AWS Services used
 
+* View your endpoints and services created
+* * `$ serverless info`
+
+* Testing the Websocket
+* * Yo can use the Chrome Extension below
+* * * [Websocket Test Client](https://chrome.google.com/webstore/detail/websocket-test-client/fgponpodhbmadfljofbimhhlengambbn?hl=en)
+
 * Make changes on code and redeploy
 * * `$ serverless deploy`
 
 * Remove all project
 * * `$ serverless remove`
+
+## Troubleshooting
+
+* If on step "Configure project with Serverless Framework" show up error below <br>
+Error: The provided access key is not authorized for this operation. - Please contact support and provide this identifier to reference this issue - 6XTBZKM5S92D
+* *  Go to C:\Users\USERNAME\
+* * * Delete file `.serverlessrc`
+* * * Run again: `$ serverless login`
+* * * Run again: `$ serverless`
 
 <!-- CONTRIBUTING -->
 ## Contributing
