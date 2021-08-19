@@ -102,8 +102,16 @@ Template aplication websocket using nodejs, serverless framework and aws api gat
 
 * If on step "Configure project with Serverless Framework" show up error below <br>
 `An error occurred: WebsocketsDeploymentStage - CloudWatch Logs role ARN must be set in account settings to enable logging (Service: AmazonApiGatewayV2; Status Code: 400; Error Code: BadRequestException; Request ID: cde1d14f-6dbc-46d3-8568-1433e7f712ff; Proxy: null).`
-* * See the article below
-* * * https://aws.amazon.com/pt/premiumsupport/knowledge-center/api-gateway-cloudwatch-logs/
+* * Create new role
+* * * https://console.aws.amazon.com/iamv2/home#/roles
+* * * Select type of trusted entity > AWS Service
+* * * Choose a use case > API Gateway
+* * * Click Next: Permissions
+* * * Permissions: AmazonAPIGatewayPushToCloudWatchLogs
+* * * Click Next: Tags and Click Next: Review
+* * * Add name: serverlessAPIGatewayCloudWatchLogs and Click Create Role
+* * * remove the comment the line 20 of [serverless.yml](https://github.com/ismaelash/template-nodejs-aws-websocket/blob/main/serverless.yml)
+* * * replace `{AccountId}`for your [account Id](https://console.aws.amazon.com/billing/home?#/account)
 
 <!-- CONTRIBUTING -->
 ## Contributing
