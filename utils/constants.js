@@ -1,2 +1,2 @@
-exports.TABLE_NAME = "template-nodejs-websocket"
+exports.TABLE_NAME = "template-nodejs-websocket-clientConnected"
 exports.AWS_REGION = "us-east-2"
