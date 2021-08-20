@@ -7,7 +7,7 @@ service: ismaelash-template-nodejs
 provider:
     name: aws
     runtime: nodejs14.x
-    # region: us-east-1
+    region: us-east-1
     stage: develop
     websocketsApiName: ${self:custom.projectName}
     websocketsApiRouteSelectionExpression: $request.body.route
@@ -60,7 +60,7 @@ resources:
         TemplateNodejsWebsocket:
             Type: AWS::DynamoDB::Table
             Properties:
-                TableName: template-nodejs-websocket_clientConnected
+                TableName: template-nodejs-websocket-clientConnected
                 AttributeDefinitions:
                     - AttributeName: Id
                       AttributeType: S
