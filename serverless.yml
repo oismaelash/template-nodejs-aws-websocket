@@ -60,7 +60,7 @@ functions:
 
 resources:
     Resources:
-        NotificationsWebsocketTable:
+        TemplateNodejsWebsocket:
             Type: AWS::DynamoDB::Table
             Properties:
                 TableName: ${self:custom.projectName}
