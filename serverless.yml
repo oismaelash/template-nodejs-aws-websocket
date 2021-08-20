@@ -1,16 +1,13 @@
 frameworkVersion: "2"
 
 org: ismaelnascimentoash
-app: template-nodejs-websocket
-service: websocket-quiui
+app: websocket-template
+service: ismaelash-template-nodejs
 
 provider:
     name: aws
-    # runtime: nodejs14.x
-    runtime: nodejs12.x
+    runtime: nodejs14.x
     # region: us-east-1
-    region: us-east-2
-    # stage: prod
     stage: develop
     websocketsApiName: ${self:custom.projectName}
     websocketsApiRouteSelectionExpression: $request.body.route
@@ -63,7 +60,7 @@ resources:
         TemplateNodejsWebsocket:
             Type: AWS::DynamoDB::Table
             Properties:
-                TableName: ${self:custom.projectName}
+                TableName: template-nodejs-websocket_clientConnected
                 AttributeDefinitions:
                     - AttributeName: Id
                       AttributeType: S
